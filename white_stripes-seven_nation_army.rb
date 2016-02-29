@@ -1,28 +1,33 @@
+full = 1.0
+half = full / 2
+quarter = full / 4
+eigth = full / 8
+
 define :iconic_bass_guitar do
   in_thread do
-    with_fx :compressor, amp: 1 do
+    with_fx :compressor, amp: 2 do
       loop do
         use_synth :fm
         play :e3
-        sleep 0.75
+        sleep 3*quarter
 
         play :e3
-        sleep 0.25
+        sleep quarter
 
         play :g3, release: 0.4
-        sleep 0.375
+        sleep 3*eigth
 
         play :e3, release: 0.4
-        sleep 0.375
+        sleep 3*eigth
 
         play :d3, release: 0.4
-        sleep 0.25
+        sleep quarter
 
         play :c3, release: 0.8
-        sleep 1
+        sleep full
 
         play :b2
-        sleep 1
+        sleep full
       end
     end
   end
@@ -60,4 +65,3 @@ sleep 8
 drum
 sleep 8.5
 snare
-sleep 7.5
